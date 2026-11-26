@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { Button, Dropdown, Input, Pagination, Select } from 'antd'
 import { StatusBadge } from '../../shared/ui/StatusBadge'
@@ -17,6 +18,7 @@ function tasksLabel(n: number) {
 }
 
 function TemplateCard({ template }: { template: Template }) {
+  const navigate = useNavigate()
   const meta = STATUS_META[template.status]
   return (
     <div className={styles.card}>
@@ -27,7 +29,7 @@ function TemplateCard({ template }: { template: Template }) {
         <StatusBadge label={meta.label} tone={meta.tone} />
       </div>
       <div className={styles.cardFooter}>
-        <Button>Открыть</Button>
+        <Button onClick={() => navigate(`/templates/${template.id}`)}>Открыть</Button>
         <Dropdown
           menu={{
             items: [
