@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Button, DatePicker, Dropdown, Input, Progress, Select, Table } from 'antd'
+import { Button, DatePicker, Dropdown, Input, Progress, Select, Table, message } from 'antd'
 import type { TableColumnsType } from 'antd'
 import dayjs from 'dayjs'
 import { StatusBadge } from '../../shared/ui/StatusBadge'
 import { useDebouncedValue } from '../../shared/hooks/useDebouncedValue'
-import { useFactories, useProjects } from './hooks'
+import { useCreateProject, useFactories, useProjects } from './hooks'
 import { PAGE_SIZE, STATUS_META } from './constants'
+import { SelectTemplateModal } from './SelectTemplateModal'
 import type { Project, ProjectStatus } from './types'
 import styles from './ProjectsPage.module.css'
 
@@ -76,6 +77,7 @@ export function ProjectsPage() {
   const [factoryId, setFactoryId] = useState<string>()
   const [range, setRange] = useState<[string, string]>()
   const [page, setPage] = useState(1)
+  const [templateModalOpen, setTemplateModalOpen] = useState(false)
 
   const debouncedSearch = useDebouncedValue(search)
 
@@ -89,6 +91,21 @@ export function ProjectsPage() {
     pageSize: PAGE_SIZE,
   })
   const { data: factories } = useFactories()
+  const createProject = useCreateProject()
+
+  const handleApplyTemplate = (templateId: string) => {
+    createProject.mutate(
+      { templateId },
+      {
+        onSuccess: () => {
+          message.success('Проект создан')
+          setTemplateModalOpen(false)
+          setPage(1)
+        },
+        onError: () => message.error('Не удалось создать проект'),
+      },
+    )
+  }
 
   return (
     <div>
@@ -97,7 +114,7 @@ export function ProjectsPage() {
           <h1 className={styles.title}>Мои проекты</h1>
           <p className={styles.subtitle}>Список проектов на вашем заводе</p>
         </div>
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" onClick={() => setTemplateModalOpen(true)}>
           + Создать проект
         </Button>
       </div>
@@ -170,6 +187,13 @@ export function ProjectsPage() {
           showSizeChanger: false,
           align: 'center',
         }}
+      />
+
+      <SelectTemplateModal
+        open={templateModalOpen}
+        loading={createProject.isPending}
+        onCancel={() => setTemplateModalOpen(false)}
+        onApply={handleApplyTemplate}
       />
     </div>
   )

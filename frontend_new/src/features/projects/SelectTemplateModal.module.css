@@ -1,0 +1,50 @@
+.subtitle {
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 360px;
+  padding-right: 8px;
+  overflow-y: auto;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 70px 110px 24px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  border: 1px solid #555;
+  border-radius: 8px;
+  transition: border-color 0.15s;
+}
+
+.item:hover {
+  border-color: #4a86d8;
+}
+
+.selected,
+.selected:hover {
+  border-color: #3d2fa0;
+  box-shadow: 0 0 0 1px #3d2fa0;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #444;
+}
+
+.tasks {
+  font-size: 11px;
+  text-align: center;
+}
