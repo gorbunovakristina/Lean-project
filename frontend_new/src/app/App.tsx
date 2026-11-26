@@ -1,3 +1,5 @@
+import { TemplatesPage } from '../features/templates/TemplatesPage'
+import { ProjectsPage } from '../features/projects/ProjectsPage'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts/MainLayout'
 import { PageStub } from '../shared/ui/PageStub'
@@ -9,8 +11,8 @@ export default function App() {
 
       <Route element={<MainLayout />}>
         <Route index element={<Navigate to="/projects" replace />} />
-        <Route path="projects" element={<PageStub title="Мои проекты" />} />
-        <Route path="templates" element={<PageStub title="Библиотека шаблонов" />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="templates" element={<TemplatesPage />} />
         <Route path="enterprises" element={<PageStub title="Справочник предприятий" />} />
         <Route path="tasks">
           <Route index element={<Navigate to="my" replace />} />

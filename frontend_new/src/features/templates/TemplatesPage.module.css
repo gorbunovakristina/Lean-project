@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.search {
+  width: 350px;
+  max-width: 100%;
+}
+
+.select {
+  width: 180px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  transition: opacity 0.2s;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  padding: 24px 20px 20px;
+  background: #fff;
+  border: 1px solid #3b4a8a;
+  border-radius: 12px;
+  text-align: center;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* в макете средняя карточка подсвечена синим, это состояние наведения */
+.card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 1px #1890ff;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cardDescription {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cardTasks {
+  margin: 0;
+  font-size: 12px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
