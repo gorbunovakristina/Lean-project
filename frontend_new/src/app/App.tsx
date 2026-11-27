@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts/MainLayout'
-import { PageStub } from '../shared/ui/PageStub'
 import { RequireAuth } from '../features/auth/RequireAuth'
 import { LoginPage } from '../features/auth/LoginPage'
 import { ProjectsPage } from '../features/projects/ProjectsPage'
@@ -8,6 +7,7 @@ import { TemplatesPage } from '../features/templates/TemplatesPage'
 import { TemplateBuilderPage } from '../features/templates/builder/TemplateBuilderPage'
 import { EnterprisesPage } from '../features/enterprises/EnterprisesPage'
 import { ProfilePage } from '../features/profile/ProfilePage'
+import { TasksPage } from '../features/tasks/TasksPage'
 
 export default function App() {
   return (
@@ -23,8 +23,11 @@ export default function App() {
           <Route path="enterprises" element={<EnterprisesPage />} />
           <Route path="tasks">
             <Route index element={<Navigate to="my" replace />} />
-            <Route path="my" element={<PageStub title="Мои задачи" />} />
-            <Route path="department" element={<PageStub title="Задачи моего отдела" />} />
+            <Route path="my" element={<TasksPage key="my" scope="my" />} />
+            <Route
+              path="department"
+              element={<TasksPage key="department" scope="department" />}
+            />
           </Route>
           <Route path="profile" element={<ProfilePage />} />
         </Route>

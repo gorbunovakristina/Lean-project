@@ -5,6 +5,7 @@ import { projectsCreateHandlers } from './projectsCreate'
 import { enterprisesHandlers } from './enterprises'
 import { profileHandlers } from './profile'
 import { authHandlers } from './auth'
+import { tasksHandlers } from './tasks'
 
 export const worker = setupWorker(
   ...handlers,
@@ -13,4 +14,5 @@ export const worker = setupWorker(
   ...enterprisesHandlers,
   ...profileHandlers,
   ...authHandlers,
+  ...tasksHandlers,
 )
