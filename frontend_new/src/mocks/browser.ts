@@ -6,6 +6,7 @@ import { enterprisesHandlers } from './enterprises'
 import { profileHandlers } from './profile'
 import { authHandlers } from './auth'
 import { tasksHandlers } from './tasks'
+import { myTasksHandlers } from './myTasks'
 
 export const worker = setupWorker(
   ...handlers,
@@ -15,4 +16,5 @@ export const worker = setupWorker(
   ...profileHandlers,
   ...authHandlers,
   ...tasksHandlers,
+  ...myTasksHandlers,
 )

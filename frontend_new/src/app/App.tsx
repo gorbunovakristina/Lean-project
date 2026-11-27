@@ -1,3 +1,4 @@
+import { MyTasksPage } from '../features/tasks/my/MyTasksPage'
 import { RequireHead } from '../features/auth/RequireHead'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts/MainLayout'
@@ -25,7 +26,7 @@ export default function App() {
 
                     <Route path="tasks">
             <Route index element={<Navigate to="my" replace />} />
-            <Route path="my" element={<TasksPage key="my" scope="my" />} />
+            <Route path="my" element={<MyTasksPage />} />
             <Route element={<RequireHead />}>
               <Route
                 path="department"
