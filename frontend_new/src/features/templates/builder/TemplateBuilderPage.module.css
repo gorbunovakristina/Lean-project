@@ -1,0 +1,117 @@
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #777;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.panel {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 12px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panelTitle {
+  margin: 0 0 24px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.counter {
+  padding: 2px 12px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  background: #e8edf5;
+  border: 1px solid #b8c4dc;
+  border-radius: 12px;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.task:hover {
+  background: #f3f6fa;
+}
+
+.taskActive,
+.taskActive:hover {
+  background: #e3ecf8;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  background: #d3d3d3;
+  border-radius: 50%;
+}
+
+.role {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #4a86d8;
+}
+
+.addButton {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

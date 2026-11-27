@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.panel {
+  min-width: 0;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 12px;
+}
+
+.panelTitle {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tree {
+  margin-top: 16px;
+}
+
+.search {
+  margin-bottom: 16px;
+}

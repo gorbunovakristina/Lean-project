@@ -1,0 +1,90 @@
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 460px;
+  max-width: 100%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  font-size: 32px;
+  color: #666;
+  background: #d9d9d9;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.position {
+  margin-top: 12px;
+}
+
+.email {
+  margin-top: 16px;
+}
+
+.editButton {
+  align-self: flex-start;
+  width: 240px;
+}
+
+.card {
+  padding: 8px 20px 12px;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 12px;
+}
+
+.details {
+  margin: 0;
+}
+
+.details dt {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #777;
+}
+
+.details dd {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.notifications {
+  width: 340px;
+  max-width: 100%;
+  padding: 16px 20px;
+}
+
+.notificationsHeader,
+.notificationRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notificationsHeader {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.notificationRow {
+  margin-top: 14px;
+  font-size: 13px;
+}

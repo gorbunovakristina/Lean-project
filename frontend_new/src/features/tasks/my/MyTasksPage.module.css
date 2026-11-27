@@ -1,0 +1,123 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search {
+  max-width: 350px;
+}
+
+.selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.select {
+  width: 170px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.withPanel {
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: opacity 0.2s;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: 420px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 10px;
+}
+
+.card:hover {
+  border-color: #4a86d8;
+}
+
+.cardActive,
+.cardActive:hover {
+  border-color: #4a86d8;
+  box-shadow: 0 0 0 1px #4a86d8;
+}
+
+.cardTitle {
+  font-size: 14px;
+}
+
+.cardProject {
+  font-size: 11px;
+  color: #555;
+}
+
+.cardDue {
+  font-size: 13px;
+}
+
+.pagination {
+  margin-top: 24px;
+}
+
+.panel {
+  padding: 16px 20px 20px;
+  font-size: 13px;
+  background: #fff;
+  border: 2px solid #1890ff;
+  border-radius: 12px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.taskName {
+  margin-bottom: 4px;
+}
+
+.muted {
+  font-size: 12px;
+  color: #666;
+}
+
+.label {
+  margin: 16px 0 6px;
+  font-size: 13px;
+}
+
+.files {
+  padding: 8px 12px;
+  border: 1px solid #cfd4dc;
+  border-radius: 8px;
+}
+
+.complete {
+  margin-top: 16px;
+}

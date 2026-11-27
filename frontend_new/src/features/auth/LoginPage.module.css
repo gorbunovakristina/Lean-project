@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 32px 48px 24px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin: 20px 0 28px;
+  font-size: 16px;
+}
+
+.form {
+  text-align: left;
+}
+
+.alert {
+  margin-bottom: 16px;
+}
+
+.forgot {
+  margin-top: 8px;
+  font-size: 13px;
+}

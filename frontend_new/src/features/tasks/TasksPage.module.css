@@ -1,0 +1,64 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search {
+  max-width: 350px;
+}
+
+.selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.select {
+  width: 170px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: opacity 0.2s;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 130px 130px 130px 130px 48px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 10px;
+}
+
+.cardTitle {
+  font-size: 15px;
+}
+
+.cardDescription {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.cardProject {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #555;
+}
+
+.center {
+  text-align: center;
+  font-size: 13px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}

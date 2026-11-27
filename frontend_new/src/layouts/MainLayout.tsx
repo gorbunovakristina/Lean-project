@@ -1,4 +1,6 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { useQueryClient } from '@tanstack/react-query'
+import { clearToken } from '../features/auth/authStorage'
 import styles from './MainLayout.module.css'
 
 const menu = [
@@ -10,6 +12,15 @@ const menu = [
 ]
 
 export function MainLayout() {
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
+
+  const logout = () => {
+    clearToken()
+    queryClient.clear() // чтобы следующий пользователь не увидел чужие данные
+    navigate('/login', { replace: true })
+  }
+
   return (
     <div className={styles.root}>
       <aside className={styles.sidebar}>
@@ -27,6 +38,9 @@ export function MainLayout() {
             </NavLink>
           ))}
         </nav>
+        <button type="button" className={styles.logout} onClick={logout}>
+          Выйти
+        </button>
       </aside>
       <main className={styles.content}>
         <Outlet />

@@ -44,3 +44,23 @@
   background: #fff;
   min-width: 0;
 }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.logout {
+  margin-top: auto;
+  padding: 8px 16px;
+  font: inherit;
+  text-align: left;
+  color: #555;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 8px;
+}
+
+.logout:hover {
+  background: #d9e2ec;
+}
