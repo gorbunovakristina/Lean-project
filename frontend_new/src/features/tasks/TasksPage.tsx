@@ -1,3 +1,4 @@
+import { useProfile } from '../profile/hooks'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Dropdown, Input, Modal, Pagination, Select, Tabs, message } from 'antd'
@@ -75,6 +76,8 @@ function TaskCard({ task, onAssign }: CardProps) {
 }
 
 export function TasksPage({ scope }: { scope: TaskScope }) {
+  const { data: profile } = useProfile()
+  const isHead = profile?.role === 'head'
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [status, setStatus] = useState<TaskStatus>()
@@ -124,9 +127,9 @@ export function TasksPage({ scope }: { scope: TaskScope }) {
         activeKey={scope}
         onChange={(key) => navigate(`/tasks/${key}`)}
         items={[
-          { key: 'my', label: 'Мои задачи' },
-          { key: 'department', label: 'Задачи отдела' },
-        ]}
+  { key: 'my', label: 'Мои задачи' },
+  ...(isHead ? [{ key: 'department', label: 'Задачи отдела' }] : []),
+]}
         tabBarExtraContent={
           <Button
             type="primary"

@@ -12,8 +12,9 @@ const profile: Profile = {
   position: 'Руководитель проекта',
   department: 'Отдел оптимизации',
   factory: 'АО «Завод №2»',
+  role: 'head', // поставить 'employee', чтобы проверить вид обычного сотрудника
   notifications: { tasks: true, projects: true, weekly: true },
-}
+} 
 
 export const profileHandlers = [
   http.get('/api/profile', async () => {

@@ -1,3 +1,4 @@
+import { RequireHead } from '../features/auth/RequireHead'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts/MainLayout'
 import { RequireAuth } from '../features/auth/RequireAuth'
@@ -21,13 +22,16 @@ export default function App() {
           <Route path="templates" element={<TemplatesPage />} />
           <Route path="templates/:id" element={<TemplateBuilderPage />} />
           <Route path="enterprises" element={<EnterprisesPage />} />
-          <Route path="tasks">
+
+                    <Route path="tasks">
             <Route index element={<Navigate to="my" replace />} />
             <Route path="my" element={<TasksPage key="my" scope="my" />} />
-            <Route
-              path="department"
-              element={<TasksPage key="department" scope="department" />}
-            />
+            <Route element={<RequireHead />}>
+              <Route
+                path="department"
+                element={<TasksPage key="department" scope="department" />}
+              />
+            </Route>
           </Route>
           <Route path="profile" element={<ProfilePage />} />
         </Route>
