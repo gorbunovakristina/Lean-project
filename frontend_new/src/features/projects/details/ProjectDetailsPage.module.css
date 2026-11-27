@@ -1,0 +1,30 @@
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #777;
+  text-decoration: none;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.meta {
+  display: flex;
+  gap: 32px;
+  margin: 12px 0 16px;
+  font-size: 16px;
+}
+
+.banner {
+  max-width: 400px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #cfd4dc;
+  border-radius: 8px;
+}

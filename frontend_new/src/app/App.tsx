@@ -1,3 +1,4 @@
+import { ProjectDetailsPage } from '../features/projects/details/ProjectDetailsPage'
 import { MyTasksPage } from '../features/tasks/my/MyTasksPage'
 import { RequireHead } from '../features/auth/RequireHead'
 import { Navigate, Route, Routes } from 'react-router-dom'
@@ -20,6 +21,7 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route index element={<Navigate to="/projects" replace />} />
           <Route path="projects" element={<ProjectsPage />} />
+          <Route path="projects/:id" element={<ProjectDetailsPage />} />
           <Route path="templates" element={<TemplatesPage />} />
           <Route path="templates/:id" element={<TemplateBuilderPage />} />
           <Route path="enterprises" element={<EnterprisesPage />} />

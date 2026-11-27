@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Button, DatePicker, Dropdown, Input, Progress, Select, Table, message } from 'antd'
 import type { TableColumnsType } from 'antd'
@@ -18,7 +19,7 @@ const columns: TableColumnsType<Project> = [
     dataIndex: 'name',
     render: (_, p) => (
       <div>
-        <div>{p.name}</div>
+        <Link to={`/projects/${p.id}`}>{p.name}</Link>
         <div className={styles.description}>{p.description}</div>
       </div>
     ),
